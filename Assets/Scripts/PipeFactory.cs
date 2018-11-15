@@ -18,7 +18,7 @@ public class PipeFactory : MonoBehaviour {
         {
             var segment = Instantiate(PipeSegment);
             segment.transform.rotation = Quaternion.Euler(0, 0, 90);
-            segment.transform.Translate(0, 0, i * 4f);
+            //segment.transform.Translate(0, 0, i * 4f);
             segment.transform.localScale = Vector3.one * 5;
             pipes.Enqueue(segment);
         }
@@ -34,7 +34,7 @@ public class PipeFactory : MonoBehaviour {
         {
             offset += 4f;
             var segment = pipes.Dequeue();
-            segment.transform.position = new Vector3(0, 0, pipes.Count * 4f + offset);
+            //segment.transform.position = new Vector3(0, 50f, pipes.Count * 4f + offset);
             pipes.Enqueue(segment);
         }
 
@@ -42,6 +42,7 @@ public class PipeFactory : MonoBehaviour {
         foreach (var segment in pipes)
         {
             segment.transform.position = new Vector3(0, 0, i * 4f + offset);
+
             i++;
         }
     }
